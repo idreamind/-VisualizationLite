@@ -1,0 +1,26 @@
+{
+  "name": "visualisation",
+  "version": "0.1.0",
+  "authors": [
+    "idreamind <kos.voit@gmail.com>"
+  ],
+  "description": "Extern Data Visualisation",
+  "main": "index.html",
+  "moduleType": [
+    "es6",
+    "node"
+  ],
+  "keywords": [
+    "angular",
+    "node",
+    "materialdesign"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

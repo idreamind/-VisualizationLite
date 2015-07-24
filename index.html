@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Viaualization</title>
+    <link rel="stylesheet" href="bower_components/normalize.css/normalize.css">
+    <link rel="stylesheet" href="bower_components/material-design-lite/material.min.css">
+    <script src="bower_components/material-design-lite/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+    <body ng-app="Vis" ng-controller="Main as cm">
+        <!-- Navigation: -->
+        <div class="mdl-layout mdl-js-layout mdl-layout--overlay-drawer-button">
+            <header class="mdl-layout__header" id="header">
+                <div class="mdl-layout-icon"></div>
+                <div class="mdl-layout__header-row">
+                    <span class="mdl-layout-title">Visualization Lite</span>
+                    <div class="mdl-layout-spacer"></div>
+                    <div id="tt1" class="icon material-icons">cloud</div>
+                    <div class="mdl-tooltip" for="tt1" ng-bind="cm.state"></div>
+                </div>
+            </header>
+            <div class="mdl-layout__drawer">
+                <span class="mdl-layout-title">Visualization Lite</span>
+                <nav class="mdl-navigation">
+                    <span class="mdl-navigation__link">
+                        Refresh period:&nbsp;<span ng-bind="cm.interval"></span>&nbsp;sec
+                    </span>
+                    <span class="mdl-navigation__link">
+                        <input class="mdl-slider mdl-js-slider" type="range" min="1" max="60" value="0" tabindex="1" ng-model="cm.interval">
+                    </span>
+                </nav>
+            </div>
+        </div>
+        <!-- Layout: -->
+        <div class="main">
+            <div id="tolerance-ring" class="vis-depth-2">&nbsp;</div>
+            <div id="data-ring" class="vis-depth-3">
+                <div id="data-ring-data">
+                    <span class="mid">Solution:</span><span class="mid">Ratio:</span><br>
+                    <b><span class="mid" ng-bind="cm.solution"></span><span class="mid" ng-bind="cm.ratio"></span></b>
+                    <hr>
+                    <span class="icon material-icons">place</span><br><span class="big" ng-bind="cm.lat"></span><span class="big" ng-bind="cm.lon"></span>
+                    <hr>
+                    <span class="small">Age:</span><span class="small">RMS:</span><span class="small">Sat:</span><br>
+                    <b><span class="small" ng-bind="cm.age"></span><span class="small" ng-bind="cm.rms"></span><span class="small" ng-bind="cm.sat"></span></b>
+                </div>
+            </div>
+        </div>
+        <!-- Scripts: -->
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="js/app/app.js"></script>
+        <script src="js/app/controller-main.js"></script>
+    </body>
+</html>
